@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Build;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -42,13 +43,13 @@ public class FlutterPanoramaView implements PlatformView, MethodChannel.MethodCa
                         Map<String, Object> params) {
         this.context=context;
         mCameraView =new SrsCameraView(context);
-        requestPermission(context);
+        requestPermission(context,params);
         // 注册MethodChannel
         methodChannel = new MethodChannel(messenger, "plugins.lqx/camerartmp");
         methodChannel.setMethodCallHandler(this);
     }
 
-    private void requestPermission(Context  context) {
+    private void requestPermission(Context  context,Map<String, Object> params) {
         //1. 检查是否已经有该权限
         if (Build.VERSION.SDK_INT >= 23 && (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(context, Manifest.permission.RECORD_AUDIO)
@@ -58,18 +59,20 @@ public class FlutterPanoramaView implements PlatformView, MethodChannel.MethodCa
             ActivityCompat.requestPermissions((Activity) context,
                     new String[]{Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
         }else{
-            init();
+            Log.e("uuuuuuuuuuu", String.valueOf(params));
+//            Toast.makeText(context,(int) params.get("width"),Toast.LENGTH_LONG).show();
+            init(params);
         }
     }
 
 
-    private void init(){
+    private void init(Map<String, Object> params){
         mPublisher = new SrsPublisher(mCameraView);
         mPublisher.setEncodeHandler(new SrsEncodeHandler(this));
         mPublisher.setRtmpHandler(new RtmpHandler(this));
         mPublisher.setRecordHandler(new SrsRecordHandler(this));
-        mPublisher.setPreviewResolution(1400, 720);
-        mPublisher.setOutputResolution(720, 1400); // 这里要和preview反过来
+        mPublisher.setPreviewResolution((int) params.get("height"), (int) params.get("width"));
+        mPublisher.setOutputResolution((int) params.get("width"), (int) params.get("height")); // 这里要和preview反过来
         mPublisher.setVideoHDMode();
         mPublisher.startCamera();
     }
@@ -115,6 +118,16 @@ public class FlutterPanoramaView implements PlatformView, MethodChannel.MethodCa
                 break;
             case "switchToHardEncoder":
                 mPublisher.switchToHardEncoder();
+                break;
+            case "setSendVideoOnly":
+                mPublisher.setSendVideoOnly((Boolean) call.argument("flag"));
+                break;
+            case "setPreview":
+                mPublisher.stopCamera();
+                mPublisher.setPreviewResolution((int)call.argument("height"), (int) call.argument("width"));
+                mPublisher.setOutputResolution((int) call.argument("width"), (int)call.argument("height")); // 这里要和preview反过来
+                mPublisher.startCamera();
+//                mCameraView.setPreviewResolution((int)call.argument("height"), (int) call.argument("width"));
                 break;
             default:break;
         }

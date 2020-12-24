@@ -316,7 +316,11 @@ public class SrsCameraView extends GLSurfaceView implements GLSurfaceView.Render
         Camera.Parameters params = mCamera.getParameters();
         //params.setPictureSize(mPreviewWidth, mPreviewHeight);
         if(mCamId==0){
-            params.setPreviewSize(1552, 720);
+            if(mPreviewWidth==720){
+                params.setPreviewSize(1552, 720);
+            }else{
+                params.setPreviewSize(720, 480);
+            }
         }else{
             params.setPreviewSize(mPreviewWidth, mPreviewHeight);
         }

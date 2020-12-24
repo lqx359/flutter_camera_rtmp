@@ -55,7 +55,6 @@ class FlutterCameraRtmp extends StatelessWidget {
 
   Map<String, dynamic> _toCreationParams() {
     Map<String, dynamic> creationParams = new HashMap();
-    creationParams["enableStereoModeButton"] = "sss";
     creationParams["width"] = width;
     creationParams["height"] = height;
     return creationParams;
@@ -112,6 +111,19 @@ class CameraController {
 
   Future<void> switchToHardEncoder() async {
     await _channel.invokeMethod<void>('switchToHardEncoder');
+  }
+
+  Future<void> setSendVideoOnly(bool flag) async {
+    Map<String, dynamic> map = new HashMap();
+    map["flag"]=flag;
+    await _channel.invokeMethod<void>('setSendVideoOnly',map);
+  }
+
+  Future<void> setPreview(int width,int height) async {
+    Map<String, dynamic> map = new HashMap();
+    map["width"]=width;
+    map["height"]=height;
+    await _channel.invokeMethod<void>('setPreview',map);
   }
 
   /// Releases the resources of this camera.

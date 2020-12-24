@@ -26,9 +26,8 @@ class _MyAppState extends State<MyApp> {
           children: <Widget>[
             Expanded(
               child: FlutterCameraRtmp.pushRtmp(
-                onImageLoaded: (state) {
-                  print("------------------------------- ${state == 1 ? '图片加载完成' : '图片加载失败'}");
-                },
+                width: 720,
+                height: 1440,
               ),
             ),
            Row(
@@ -109,7 +108,39 @@ class _MyAppState extends State<MyApp> {
                    color: Colors.red,
                    child: Text("软解码"),
                  ),
-               )
+               ),
+               InkWell(
+                 onTap: (){
+                   cameraController.setSendVideoOnly(true);
+                 },
+                 child: Container(
+                   height: 40,
+                   width: 20,
+                   color: Colors.red,
+                   child: Text("静音"),
+                 ),
+               ),
+               InkWell(
+                 onTap: (){
+                   cameraController.setSendVideoOnly(false);
+                 },
+                 child: Container(
+                   height: 40,
+                   width: 20,
+                   color: Colors.red,
+                   child: Text("开启声音"),
+                 ),
+               ), InkWell(
+                 onTap: (){
+                   cameraController.setPreview(720,1440);
+                 },
+                 child: Container(
+                   height: 40,
+                   width: 20,
+                   color: Colors.red,
+                   child: Text("设置分辨率"),
+                 ),
+               ),
              ],
            )
           ],
