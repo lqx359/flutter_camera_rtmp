@@ -1,4 +1,4 @@
-package com.yasea;
+package net.ossrs.yasea;
 
 import android.media.MediaCodec;
 import android.media.MediaFormat;
@@ -41,8 +41,6 @@ import com.mp4parser.boxes.mp4.objectdescriptors.ESDescriptor;
 import com.mp4parser.boxes.mp4.objectdescriptors.SLConfigDescriptor;
 import com.mp4parser.util.Math;
 import com.mp4parser.util.Matrix;
-
-import net.ossrs.yasea.SrsEncoder;
 
 import java.io.File;
 import java.io.FileOutputStream;

@@ -1,4 +1,4 @@
-package com.yasea;
+package net.ossrs.yasea;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,6 +10,7 @@ import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.opengl.Matrix;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Surface;
 
 import com.magicfilter.base.gpuimage.GPUImageFilter;
@@ -326,14 +327,13 @@ public class SrsCameraView extends GLSurfaceView implements GLSurfaceView.Render
 //        }
 //
 //        List<Camera.Size> previewSizes = params.getSupportedPreviewSizes();
-//        length = previewSizes.size();
-//        for (int i = 0; i < length; i++) {
+//        for (int i = 0; i < previewSizes.size(); i++) {
 //            Log.e("SupportedPreviewSizes","SupportedPreviewSizes : " + previewSizes.get(i).width + "x" + previewSizes.get(i).height);
 //        }
 
-        //params.setPictureSize(mPreviewWidth, mPreviewHeight);
+//        params.setPictureSize(mPreviewWidth, mPreviewHeight);
         if (mCamId == 0) {
-            params.setPreviewSize(736, 412);
+            params.setPreviewSize(640, 480);
         } else {
             params.setPreviewSize(mPreviewWidth, mPreviewHeight);
         }

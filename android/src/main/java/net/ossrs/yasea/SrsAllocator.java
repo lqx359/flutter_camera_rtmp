@@ -1,4 +1,4 @@
-package com.yasea;
+package net.ossrs.yasea;
 
 import java.util.Arrays;
 

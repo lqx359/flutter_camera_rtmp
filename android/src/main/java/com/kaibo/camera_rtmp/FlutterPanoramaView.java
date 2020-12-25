@@ -12,10 +12,10 @@ import android.view.View;
 
 import com.simplertmp.RtmpHandler;
 
-import com.yasea.SrsCameraView;
-import com.yasea.SrsEncodeHandler;
-import com.yasea.SrsPublisher;
-import com.yasea.SrsRecordHandler;
+import net.ossrs.yasea.SrsCameraView;
+import net.ossrs.yasea.SrsEncodeHandler;
+import net.ossrs.yasea.SrsPublisher;
+import net.ossrs.yasea.SrsRecordHandler;
 
 import java.io.IOException;
 import java.net.SocketException;
@@ -82,6 +82,7 @@ public class FlutterPanoramaView implements PlatformView, MethodChannel.MethodCa
             case "startPublish":
                 mPublisher.startPublish(call.argument("rtmpUrl").toString());
                 mPublisher.startCamera();
+                mCameraView.stopTorch();
                 break;
             case "setVideoHDMode":
                 if(call.argument("call").toString().equals("hd")){
@@ -125,8 +126,6 @@ public class FlutterPanoramaView implements PlatformView, MethodChannel.MethodCa
                 mPublisher.setPreviewResolution((int)call.argument("height"), (int) call.argument("width"));
                 mPublisher.setOutputResolution((int) call.argument("width"), (int)call.argument("height")); // 这里要和preview反过来
                 mPublisher.startCamera();
-//                mCameraView.setPreviewResolution((int)call.argument("height"), (int) call.argument("width"));
-
                 break;
             default:break;
         }
@@ -202,7 +201,12 @@ public class FlutterPanoramaView implements PlatformView, MethodChannel.MethodCa
 
     @Override
     public void onRtmpVideoBitrateChanged(double bitrate) {
-
+        int rate = (int) bitrate;
+        if (rate / 1000 > 0) {
+            Log.e("trrrrrrrrrrr", String.format("Video bitrate: %f kbps", bitrate / 1000));
+        } else {
+            Log.e("trrrrrrrrrrrrrrr", String.format("Video bitrate: %d bps", rate));
+        }
     }
 
     @Override

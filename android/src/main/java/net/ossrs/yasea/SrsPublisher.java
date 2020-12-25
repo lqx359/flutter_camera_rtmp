@@ -1,4 +1,4 @@
-package com.yasea;
+package net.ossrs.yasea;
 
 import android.hardware.Camera;
 import android.media.AudioRecord;
@@ -7,8 +7,6 @@ import android.media.audiofx.AutomaticGainControl;
 
 import com.simplertmp.RtmpHandler;
 import com.magicfilter.utils.MagicFilterType;
-
-import net.ossrs.yasea.SrsEncoder;
 
 import java.io.File;
 

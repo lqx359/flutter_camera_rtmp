@@ -1,4 +1,4 @@
-package com.yasea;
+package net.ossrs.yasea;
 
 import android.media.MediaCodec;
 import android.media.MediaFormat;
@@ -6,8 +6,6 @@ import android.util.Log;
 
 import com.simplertmp.DefaultRtmpPublisher;
 import com.simplertmp.RtmpHandler;
-
-import net.ossrs.yasea.SrsEncoder;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
