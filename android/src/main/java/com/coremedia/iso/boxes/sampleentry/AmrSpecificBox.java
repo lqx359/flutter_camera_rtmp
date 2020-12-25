@@ -20,7 +20,7 @@ package com.coremedia.iso.boxes.sampleentry;
 import com.coremedia.iso.IsoFile;
 import com.coremedia.iso.IsoTypeReader;
 import com.coremedia.iso.IsoTypeWriter;
-import com.googlecode.mp4parser.AbstractBox;
+import com.mp4parser.AbstractBox;
 
 import java.nio.ByteBuffer;
 

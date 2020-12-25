@@ -16,7 +16,7 @@
 
 package com.coremedia.iso.boxes;
 
-import com.googlecode.mp4parser.AbstractContainerBox;
+import com.mp4parser.AbstractContainerBox;
 
 /**
  * The sample table contains all the time and data indexing of the media samples in a track. Using the tables

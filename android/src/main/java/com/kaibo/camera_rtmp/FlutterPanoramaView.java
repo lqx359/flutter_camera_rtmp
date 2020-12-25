@@ -9,15 +9,13 @@ import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
-import com.github.faucamp.simplertmp.RtmpHandler;
-import com.google.vr.sdk.widgets.pano.VrPanoramaView;
+import com.simplertmp.RtmpHandler;
 
-import net.ossrs.yasea.SrsCameraView;
-import net.ossrs.yasea.SrsEncodeHandler;
-import net.ossrs.yasea.SrsPublisher;
-import net.ossrs.yasea.SrsRecordHandler;
+import com.yasea.SrsCameraView;
+import com.yasea.SrsEncodeHandler;
+import com.yasea.SrsPublisher;
+import com.yasea.SrsRecordHandler;
 
 import java.io.IOException;
 import java.net.SocketException;
@@ -128,6 +126,7 @@ public class FlutterPanoramaView implements PlatformView, MethodChannel.MethodCa
                 mPublisher.setOutputResolution((int) call.argument("width"), (int)call.argument("height")); // 这里要和preview反过来
                 mPublisher.startCamera();
 //                mCameraView.setPreviewResolution((int)call.argument("height"), (int) call.argument("width"));
+
                 break;
             default:break;
         }

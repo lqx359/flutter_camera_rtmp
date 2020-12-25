@@ -18,8 +18,8 @@ package com.coremedia.iso.boxes;
 
 import com.coremedia.iso.IsoTypeReader;
 import com.coremedia.iso.IsoTypeWriter;
-import com.googlecode.mp4parser.AbstractContainerBox;
-import com.googlecode.mp4parser.util.ByteBufferByteChannel;
+import com.mp4parser.AbstractContainerBox;
+import com.mp4parser.util.ByteBufferByteChannel;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;

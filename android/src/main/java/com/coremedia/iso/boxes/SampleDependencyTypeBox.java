@@ -18,7 +18,7 @@ package com.coremedia.iso.boxes;
 
 import com.coremedia.iso.IsoTypeReader;
 import com.coremedia.iso.IsoTypeWriter;
-import com.googlecode.mp4parser.AbstractFullBox;
+import com.mp4parser.AbstractFullBox;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;

@@ -19,11 +19,11 @@ package com.coremedia.iso.boxes.h264;
 import com.coremedia.iso.Hex;
 import com.coremedia.iso.IsoTypeReader;
 import com.coremedia.iso.IsoTypeWriter;
-import com.googlecode.mp4parser.AbstractBox;
-import com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BitReaderBuffer;
-import com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BitWriterBuffer;
-import com.googlecode.mp4parser.h264.model.PictureParameterSet;
-import com.googlecode.mp4parser.h264.model.SeqParameterSet;
+import com.mp4parser.AbstractBox;
+import com.mp4parser.boxes.mp4.objectdescriptors.BitReaderBuffer;
+import com.mp4parser.boxes.mp4.objectdescriptors.BitWriterBuffer;
+import com.mp4parser.h264.model.PictureParameterSet;
+import com.mp4parser.h264.model.SeqParameterSet;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

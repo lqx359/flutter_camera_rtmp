@@ -21,7 +21,7 @@ import com.coremedia.iso.IsoTypeWriter;
 
 import java.nio.ByteBuffer;
 
-import static com.googlecode.mp4parser.util.CastUtils.l2i;
+import static com.mp4parser.util.CastUtils.l2i;
 
 /**
  * The chunk offset table gives the index of each chunk into the containing file. Defined in ISO/IEC 14496-12.

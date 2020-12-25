@@ -18,11 +18,11 @@ package com.coremedia.iso.boxes;
 
 import com.coremedia.iso.IsoTypeReader;
 import com.coremedia.iso.IsoTypeWriter;
-import com.googlecode.mp4parser.AbstractFullBox;
+import com.mp4parser.AbstractFullBox;
 
 import java.nio.ByteBuffer;
 
-import static com.googlecode.mp4parser.util.CastUtils.l2i;
+import static com.mp4parser.util.CastUtils.l2i;
 
 /**
  * This box provides a compact marking of the random access points withinthe stream. The table is arranged in

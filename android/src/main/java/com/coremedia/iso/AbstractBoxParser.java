@@ -25,7 +25,7 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.ReadableByteChannel;
 import java.util.logging.Logger;
 
-import static com.googlecode.mp4parser.util.CastUtils.l2i;
+import static com.mp4parser.util.CastUtils.l2i;
 
 /**
  * This BoxParser handles the basic stuff like reading size and extracting box type.

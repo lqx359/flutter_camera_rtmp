@@ -20,7 +20,7 @@ import com.coremedia.iso.BoxParser;
 import com.coremedia.iso.ChannelHelper;
 import com.coremedia.iso.boxes.Box;
 import com.coremedia.iso.boxes.ContainerBox;
-import com.googlecode.mp4parser.AbstractBox;
+import com.mp4parser.AbstractBox;
 
 import java.io.IOException;
 import java.lang.ref.Reference;
@@ -33,7 +33,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
-import static com.googlecode.mp4parser.util.CastUtils.l2i;
+import static com.mp4parser.util.CastUtils.l2i;
 
 /**
  * This box contains the media data. In video tracks, this box would contain video frames. A presentation may

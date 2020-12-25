@@ -20,7 +20,6 @@ package com.coremedia.iso.boxes;
 import com.coremedia.iso.BoxParser;
 import com.coremedia.iso.ChannelHelper;
 import com.coremedia.iso.IsoTypeWriter;
-import com.googlecode.mp4parser.AbstractBox;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -30,7 +29,7 @@ import java.nio.channels.WritableByteChannel;
 import java.util.LinkedList;
 import java.util.List;
 
-import static com.googlecode.mp4parser.util.CastUtils.l2i;
+import static com.mp4parser.util.CastUtils.l2i;
 
 /**
  * A free box. Just a placeholder to enable editing without rewriting the whole file.

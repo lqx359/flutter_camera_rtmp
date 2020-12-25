@@ -7,7 +7,7 @@ import com.coremedia.iso.boxes.fragment.*;
 import java.nio.ByteBuffer;
 import java.util.*;
 
-import static com.googlecode.mp4parser.util.CastUtils.l2i;
+import static com.mp4parser.util.CastUtils.l2i;
 
 /**
  * Creates a list of <code>ByteBuffer</code>s that represent the samples of a given track.

@@ -16,7 +16,7 @@
 
 package com.coremedia.iso.boxes;
 
-import com.googlecode.mp4parser.AbstractContainerBox;
+import com.mp4parser.AbstractContainerBox;
 
 /**
  * An Edit Box maps the presentation time-line to the media time-line as it is stored in the file.

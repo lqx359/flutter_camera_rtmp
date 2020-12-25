@@ -20,7 +20,7 @@ import com.coremedia.iso.IsoFile;
 import com.coremedia.iso.IsoTypeReader;
 import com.coremedia.iso.IsoTypeWriter;
 import com.coremedia.iso.Utf8;
-import com.googlecode.mp4parser.AbstractFullBox;
+import com.mp4parser.AbstractFullBox;
 
 import java.nio.ByteBuffer;
 

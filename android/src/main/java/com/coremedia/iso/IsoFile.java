@@ -16,10 +16,10 @@
 
 package com.coremedia.iso;
 
-import com.googlecode.mp4parser.AbstractContainerBox;
+import com.mp4parser.AbstractContainerBox;
 import com.coremedia.iso.boxes.Box;
 import com.coremedia.iso.boxes.MovieBox;
-import com.googlecode.mp4parser.annotations.DoNotParseDetail;
+import com.mp4parser.annotations.DoNotParseDetail;
 
 import java.io.*;
 import java.nio.ByteBuffer;

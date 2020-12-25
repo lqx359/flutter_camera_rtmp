@@ -16,10 +16,9 @@
 
 package com.coremedia.iso.boxes.fragment;
 
-import com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BitReaderBuffer;
-import com.googlecode.mp4parser.boxes.mp4.objectdescriptors.BitWriterBuffer;
+import com.mp4parser.boxes.mp4.objectdescriptors.BitReaderBuffer;
+import com.mp4parser.boxes.mp4.objectdescriptors.BitWriterBuffer;
 
-import java.io.IOException;
 import java.nio.ByteBuffer;
 
 /**

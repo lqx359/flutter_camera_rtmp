@@ -19,11 +19,10 @@ package com.coremedia.iso.boxes;
 import com.coremedia.iso.IsoFile;
 import com.coremedia.iso.IsoTypeReader;
 import com.coremedia.iso.IsoTypeWriter;
-import com.googlecode.mp4parser.AbstractBox;
-import com.googlecode.mp4parser.annotations.DoNotParseDetail;
+import com.mp4parser.AbstractBox;
+import com.mp4parser.annotations.DoNotParseDetail;
 
 import java.nio.ByteBuffer;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;

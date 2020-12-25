@@ -17,8 +17,8 @@
 package com.coremedia.iso.boxes;
 
 
-import com.googlecode.mp4parser.AbstractBox;
-import com.googlecode.mp4parser.AbstractContainerBox;
+import com.mp4parser.AbstractBox;
+import com.mp4parser.AbstractContainerBox;
 
 import java.util.List;
 

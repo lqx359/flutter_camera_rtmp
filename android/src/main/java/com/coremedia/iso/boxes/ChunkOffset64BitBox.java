@@ -5,7 +5,7 @@ import com.coremedia.iso.IsoTypeWriter;
 
 import java.nio.ByteBuffer;
 
-import static com.googlecode.mp4parser.util.CastUtils.l2i;
+import static com.mp4parser.util.CastUtils.l2i;
 
 /**
  * Abstract Chunk Offset Box

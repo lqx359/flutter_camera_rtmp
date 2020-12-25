@@ -17,7 +17,7 @@
 package com.coremedia.iso.boxes;
 
 import com.coremedia.iso.BoxParser;
-import com.googlecode.mp4parser.AbstractContainerBox;
+import com.mp4parser.AbstractContainerBox;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;

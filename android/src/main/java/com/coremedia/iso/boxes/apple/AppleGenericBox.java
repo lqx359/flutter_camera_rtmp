@@ -1,6 +1,6 @@
 package com.coremedia.iso.boxes.apple;
 
-import com.googlecode.mp4parser.AbstractContainerBox;
+import com.mp4parser.AbstractContainerBox;
 
 /**
  *

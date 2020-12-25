@@ -11,6 +11,10 @@ import android.media.MediaFormat;
 import android.media.MediaRecorder;
 import android.util.Log;
 
+import com.yasea.SrsEncodeHandler;
+import com.yasea.SrsFlvMuxer;
+import com.yasea.SrsMp4Muxer;
+
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.concurrent.atomic.AtomicInteger;
