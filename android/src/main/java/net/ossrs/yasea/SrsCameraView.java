@@ -332,11 +332,11 @@ public class SrsCameraView extends GLSurfaceView implements GLSurfaceView.Render
 //        }
 
 //        params.setPictureSize(mPreviewWidth, mPreviewHeight);
-        if (mCamId == 0) {
-            params.setPreviewSize(640, 480);
-        } else {
+//        if (mCamId == 0) {
+//            params.setPreviewSize(640, 480);
+//        } else {
             params.setPreviewSize(mPreviewWidth, mPreviewHeight);
-        }
+//        }
         int[] range = adaptFpsRange(SrsEncoder.VFPS, params.getSupportedPreviewFpsRange());
         params.setPreviewFpsRange(range[0], range[1]);
         params.setPreviewFormat(ImageFormat.NV21);
