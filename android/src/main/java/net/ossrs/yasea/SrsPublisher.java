@@ -284,6 +284,10 @@ public class SrsPublisher {
         mEncoder.setVideoHDMode();
     }
 
+    public void setBitrate(int bitrate) {
+        mEncoder.setBitrate(bitrate);
+    }
+
     public void setVideoSmoothMode() {
         mEncoder.setVideoSmoothMode();
     }

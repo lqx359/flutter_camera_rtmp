@@ -32,7 +32,7 @@ public class SrsEncoder {
     public static int vLandscapeHeight = 360;
     public static int vOutWidth = 360;   // Note: the stride of resolution must be set as 16x for hard encoding with some chip like MTK
     public static int vOutHeight = 640;  // Since Y component is quadruple size as U and V component, the stride must be set as 32x
-    public static int vBitrate = 1200 * 1024;  // 1200 kbps
+    public static int vBitrate = 3*1024 * 1024;  // 1200 kbps
     public static final int VFPS = 24;
     public static final int VGOP = 24;
     public static final int ASAMPLERATE = 44100;
@@ -263,8 +263,13 @@ public class SrsEncoder {
         vPortraitHeight = width;
     }
 
+
+    public void setBitrate(int bitrate) {
+        vBitrate = 1024 * 1024 * bitrate;  // 1200 kbps
+    }
+    
     public void setVideoHDMode() {
-        vBitrate = 1200 * 1024;  // 1200 kbps
+        vBitrate = 6*1024 * 1024;  // 1200 kbps
         x264Preset = "veryfast";
     }
 

@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
             Expanded(
               child: FlutterCameraRtmp.pushRtmp(
                 width: 720,
-                height: 1560,
+                height: 1280,
               ),
             ),
            Row(

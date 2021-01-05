@@ -127,6 +127,9 @@ public class FlutterPanoramaView implements PlatformView, MethodChannel.MethodCa
                 mPublisher.setOutputResolution((int) call.argument("width"), (int)call.argument("height")); // 这里要和preview反过来
                 mPublisher.startCamera();
                 break;
+            case "setBitrate":
+                mPublisher.setBitrate((int) call.argument("bitrate"));
+                break;
             default:break;
         }
     }
@@ -151,52 +154,52 @@ public class FlutterPanoramaView implements PlatformView, MethodChannel.MethodCa
 
     @Override
     public void onNetworkWeak() {
-
+        Log.e("trrrrrrrrrrr", "onNetworkWeak");
     }
 
     @Override
     public void onNetworkResume() {
-
+        Log.e("trrrrrrrrrrr", "onNetworkResume");
     }
 
     @Override
     public void onEncodeIllegalArgumentException(IllegalArgumentException e) {
-
+        Log.e("trrrrrrrrrrr", "onEncodeIllegalArgumentException");
     }
 
     @Override
     public void onRtmpConnecting(String msg) {
-
+        Log.e("trrrrrrrrrrr", "推流连接中。。。。。");
     }
 
     @Override
     public void onRtmpConnected(String msg) {
-
+        Log.e("trrrrrrrrrrr", "推流连接成功。。。。。");
     }
 
     @Override
     public void onRtmpVideoStreaming() {
-
+//        Log.e("trrrrrrrrrrr", "onRtmpVideoStreaming");
     }
 
     @Override
     public void onRtmpAudioStreaming() {
-
+//        Log.e("trrrrrrrrrrr", "onRtmpAudioStreaming");
     }
 
     @Override
     public void onRtmpStopped() {
-
+        Log.e("trrrrrrrrrrr", "停止推流。。。。。");
     }
 
     @Override
     public void onRtmpDisconnected() {
-
+        Log.e("trrrrrrrrrrr", "断流了。。。。。");
     }
 
     @Override
     public void onRtmpVideoFpsChanged(double fps) {
-
+        Log.e("trrrrrrrrrrr", "onRtmpVideoFpsChanged");
     }
 
     @Override
@@ -205,63 +208,63 @@ public class FlutterPanoramaView implements PlatformView, MethodChannel.MethodCa
         if (rate / 1000 > 0) {
             Log.e("trrrrrrrrrrr", String.format("Video bitrate: %f kbps", bitrate / 1000));
         } else {
-            Log.e("trrrrrrrrrrrrrrr", String.format("Video bitrate: %d bps", rate));
+            Log.e("trrrrrrrrrrr", String.format("Video bitrate: %d bps", rate));
         }
     }
 
     @Override
     public void onRtmpAudioBitrateChanged(double bitrate) {
-
+        Log.e("trrrrrrrrrrr", "onRtmpAudioBitrateChanged");
     }
 
     @Override
     public void onRtmpSocketException(SocketException e) {
-
+        Log.e("trrrrrrrrrrr", "onRtmpSocketException");
     }
 
     @Override
     public void onRtmpIOException(IOException e) {
-
+        Log.e("trrrrrrrrrrr", "onRtmpIOException");
     }
 
     @Override
     public void onRtmpIllegalArgumentException(IllegalArgumentException e) {
-
+        Log.e("trrrrrrrrrrr", "onRtmpIllegalArgumentException");
     }
 
     @Override
     public void onRtmpIllegalStateException(IllegalStateException e) {
-
+        Log.e("trrrrrrrrrrr", "onRtmpIllegalStateException");
     }
 
     @Override
     public void onRecordPause() {
-
+        Log.e("trrrrrrrrrrr", "onRecordPause");
     }
 
     @Override
     public void onRecordResume() {
-
+        Log.e("trrrrrrrrrrr", "onRecordResume");
     }
 
     @Override
     public void onRecordStarted(String msg) {
-
+        Log.e("trrrrrrrrrrr", "onRecordStarted");
     }
 
     @Override
     public void onRecordFinished(String msg) {
-
+        Log.e("trrrrrrrrrrr", "onRecordFinished");
     }
 
     @Override
     public void onRecordIllegalArgumentException(IllegalArgumentException e) {
-
+        Log.e("trrrrrrrrrrr", "onRecordIllegalArgumentException");
     }
 
     @Override
     public void onRecordIOException(IOException e) {
-
+        Log.e("trrrrrrrrrrr", "onRecordIOException");
     }
 }
 
