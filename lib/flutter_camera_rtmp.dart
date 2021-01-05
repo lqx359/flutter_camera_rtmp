@@ -119,6 +119,12 @@ class CameraController {
     await _channel.invokeMethod<void>('setSendVideoOnly',map);
   }
 
+  Future<void> setBitrate(int bitrate) async {
+    Map<String, dynamic> map = new HashMap();
+    map["bitrate"]=bitrate;
+    await _channel.invokeMethod<void>('setBitrate',map);
+  }
+
   Future<void> setPreview(int width,int height) async {
     Map<String, dynamic> map = new HashMap();
     map["width"]=width;
