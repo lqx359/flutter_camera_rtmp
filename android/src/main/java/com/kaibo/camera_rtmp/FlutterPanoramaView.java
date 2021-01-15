@@ -79,6 +79,9 @@ public class FlutterPanoramaView implements PlatformView, MethodChannel.MethodCa
     @Override
     public void onMethodCall(MethodCall call, MethodChannel.Result result) {
         switch (call.method){
+            case "openCamera":
+                mPublisher.startCamera();
+                break;
             case "startPublish":
                 mPublisher.startPublish(call.argument("rtmpUrl").toString());
                 mPublisher.startCamera();

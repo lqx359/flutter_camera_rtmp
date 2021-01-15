@@ -89,6 +89,10 @@ class CameraController {
     await _channel.invokeMethod<void>('startPublish',map);
   }
 
+  Future<void> openCamera() async {
+    await _channel.invokeMethod<void>('openCamera');
+  }
+
   Future<void> switchCameraFace() async {
     await _channel.invokeMethod<void>('switchCameraFace');
   }
