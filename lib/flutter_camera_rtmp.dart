@@ -12,14 +12,15 @@ typedef void ImageLoadedCallback(int state);
 final MethodChannel _channel = const MethodChannel('plugins.lqx/camerartmp');
 
 class FlutterCameraRtmp extends StatelessWidget {
-  final ImageLoadedCallback onImageLoaded;
-  final int width;
-  final int height;
+  ImageLoadedCallback onImageLoaded;
+  int width;
+  int height;
+  bool changeCamera;
 
   _PlatformCallbacksHandler _platformCallbacksHandler;
 
   FlutterCameraRtmp.pushRtmp(
-      { this.onImageLoaded, this.width, this.height})
+      { this.onImageLoaded, this.width, this.height,this.changeCamera})
       : super();
 
   static FlutterPanoramaPlatform _platform;
@@ -57,6 +58,7 @@ class FlutterCameraRtmp extends StatelessWidget {
     Map<String, dynamic> creationParams = new HashMap();
     creationParams["width"] = width;
     creationParams["height"] = height;
+    creationParams["changeCamera"] = changeCamera;
     return creationParams;
   }
 }
@@ -91,6 +93,10 @@ class CameraController {
 
   Future<void> openCamera() async {
     await _channel.invokeMethod<void>('openCamera');
+  }
+
+  Future<void> releaseCamera() async {
+    await _channel.invokeMethod<void>('releaseCamera');
   }
 
   Future<void> switchCameraFace() async {

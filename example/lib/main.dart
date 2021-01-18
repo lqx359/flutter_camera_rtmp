@@ -20,15 +20,18 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    cameraController.releaseCamera();
+    bool switchs=true;
     return MaterialApp(
       home: Scaffold(
         body: Column(
           children: <Widget>[
             Expanded(
-              child: FlutterCameraRtmp.pushRtmp(
+              child: switchs?FlutterCameraRtmp.pushRtmp(
                 width: 720,
                 height: 1280,
-              ),
+                changeCamera: true,
+              ):Container(),
             ),
            Row(
              children: <Widget>[

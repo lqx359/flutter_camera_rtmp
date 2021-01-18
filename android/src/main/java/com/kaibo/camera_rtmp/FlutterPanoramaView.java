@@ -73,12 +73,28 @@ public class FlutterPanoramaView implements PlatformView, MethodChannel.MethodCa
         mPublisher.setOutputResolution((int) params.get("width"), (int) params.get("height")); // 这里要和preview反过来
         mPublisher.setVideoHDMode();
         mPublisher.startCamera();
+        if((boolean) params.get("changeCamera")){
+            mPublisher.switchCameraFace((mPublisher.getCameraId() + 1) % Camera.getNumberOfCameras());
+        }
     }
 
 
     @Override
     public void onMethodCall(MethodCall call, MethodChannel.Result result) {
         switch (call.method){
+            case "releaseCamera":
+                if(mCameraView!=null){
+                    mCameraView.stopCamera();
+                    mCameraView=null;
+                }
+                if(mPublisher!=null){
+                    mPublisher.setEncodeHandler(null);
+                    mPublisher.setRtmpHandler(null);
+                    mPublisher.setRecordHandler(null);
+                    mPublisher.stopCamera();
+                    mPublisher=null;
+                }
+                break;
             case "openCamera":
                 mPublisher.startCamera();
                 break;
